@@ -10,7 +10,17 @@ public class MyWorld extends World
         Seal seal = new Seal();
         addObject(seal, 300, 300);
         
+        createApple();
+        
+    }
+    /** 
+    * create a new apple at random location at top of the screen
+    */
+    public void createApple()
+    {
         Apple apple = new Apple();
-        addObject(apple, 300, 0);
+        int x = Greenfoot.getRandomNumber(600);
+        int y = 0;
+        addObject(apple, x, y);
     }
 }
