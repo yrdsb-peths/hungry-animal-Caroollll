@@ -12,6 +12,19 @@ public class Seal extends Actor
             move(2);
         }
         
-        removeTouching(Apple.class);
+        eat();
+    }
+    
+    /**
+     * eat the apple and spwan new apple
+     */
+    public void eat()
+    {
+        if(isTouching(Apple.class))
+        {
+            removeTouching(Apple.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.createApple();
+        }
     }
 }
