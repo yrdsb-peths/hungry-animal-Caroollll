@@ -11,5 +11,7 @@ public class Seal extends Actor
         {
             move(2);
         }
+        
+        removeTouching(Apple.class);
     }
 }

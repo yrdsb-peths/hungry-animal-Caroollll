@@ -9,5 +9,8 @@ public class MyWorld extends World
         
         Seal seal = new Seal();
         addObject(seal, 300, 300);
+        
+        Apple apple = new Apple();
+        addObject(apple, 300, 0);
     }
 }
