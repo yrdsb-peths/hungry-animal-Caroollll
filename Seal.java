@@ -1,6 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Seal extends Actor
 {
+    GreenfootSound sealSound = new GreenfootSound("seal.mp3");
+    
     public void act()
     {
         if(Greenfoot.isKeyDown("a"))
@@ -26,6 +28,7 @@ public class Seal extends Actor
             MyWorld world = (MyWorld) getWorld();
             world.createApple();
             world.increaseScore();
+            sealSound.play();
         }
     }
 }
