@@ -2,7 +2,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Seal extends Actor
 {
     GreenfootSound sealSound = new GreenfootSound("seal.mp3");
-    
+    GreenfootImage roll = new GreenfootImage("images/seal_idle/idle0.png");
+    /**
+     * constructor
+     */
+    public Seal()
+    {
+        setImage(roll);
+    }
     public void act()
     {
         if(Greenfoot.isKeyDown("a"))
