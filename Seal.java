@@ -2,17 +2,36 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Seal extends Actor
 {
     GreenfootSound sealSound = new GreenfootSound("seal.mp3");
-    GreenfootImage[] idle = new GreenfootImage[8];
+    GreenfootImage[] idleRight = new GreenfootImage[9];
+    GreenfootImage[] idleLeft = new GreenfootImage[9];
+
+    
+    //direction the seal is facing
+    String facing = "right";
+    SimpleTimer animationTimer = new SimpleTimer();
+    
     /**
      * constructor
      */
     public Seal()
     {
-        for(int i = 0; i < idle.length; i++)
+        for(int i = 0; i < idleRight.length; i++)
         {
-            idle[i] = new GreenfootImage("images/seal_idle/idle" + i + ".png");
+            idleRight[i] = new GreenfootImage("images/seal_idle/idle" + i + ".png");
+            idleRight[i].scale(150, 150);
         }
-        setImage(idle[0]);
+        
+        for(int i = 0; i <idleLeft.length; i++)
+        {
+            idleLeft[i] = new GreenfootImage("images/seal_idle/idle" + i + ".png");
+            idleLeft[i].mirrorHorizontally();
+            idleLeft[i].scale(150, 150);
+        }
+        
+        animationTimer.mark();
+        
+        //initial seal image
+        setImage(idleRight[0]);
     }
     /**
      * animate the seal
@@ -20,8 +39,22 @@ public class Seal extends Actor
     int imageIndex = 0;
     public void animateSeal()
     {
-        setImage(idle[imageIndex]);
-        imageIndex = (imageIndex + 1) % idle.length;
+        if(animationTimer.millisElapsed() < 80)
+        {
+            return;
+        }
+        animationTimer.mark();
+        
+        if(facing.equals("right"))
+        {
+            setImage(idleRight[imageIndex]);
+            imageIndex = (imageIndex + 1) % idleRight.length;
+        }
+        else 
+        {
+            setImage(idleLeft[imageIndex]);
+            imageIndex = (imageIndex + 1) % idleLeft.length;
+        }
     }
     
     public void act()
@@ -29,17 +62,20 @@ public class Seal extends Actor
         if(Greenfoot.isKeyDown("a"))
         {
             move(-2);
+            animateSeal();
+            facing = "left";
         }
         if(Greenfoot.isKeyDown("d"))
         {
             move(2);
+            animateSeal();
+            facing = "right";
         }
         
         //remove apple if seal eats it
         eat();
         
-        //animate the seal
-        animateSeal();
+        
     }
     
     /**
