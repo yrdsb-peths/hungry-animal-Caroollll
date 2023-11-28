@@ -2,14 +2,28 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Seal extends Actor
 {
     GreenfootSound sealSound = new GreenfootSound("seal.mp3");
-    GreenfootImage roll = new GreenfootImage("images/seal_idle/idle0.png");
+    GreenfootImage[] idle = new GreenfootImage[8];
     /**
      * constructor
      */
     public Seal()
     {
-        setImage(roll);
+        for(int i = 0; i < idle.length; i++)
+        {
+            idle[i] = new GreenfootImage("images/seal_idle/idle" + i + ".png");
+        }
+        setImage(idle[0]);
     }
+    /**
+     * animate the seal
+     */
+    int imageIndex = 0;
+    public void animateSeal()
+    {
+        setImage(idle[imageIndex]);
+        imageIndex = (imageIndex + 1) % idle.length;
+    }
+    
     public void act()
     {
         if(Greenfoot.isKeyDown("a"))
@@ -21,7 +35,11 @@ public class Seal extends Actor
             move(2);
         }
         
+        //remove apple if seal eats it
         eat();
+        
+        //animate the seal
+        animateSeal();
     }
     
     /**
