@@ -61,13 +61,13 @@ public class Seal extends Actor
     {
         if(Greenfoot.isKeyDown("a"))
         {
-            move(-2);
+            move(-3);
             animateSeal();
             facing = "left";
         }
         if(Greenfoot.isKeyDown("d"))
         {
-            move(2);
+            move(3);
             animateSeal();
             facing = "right";
         }
