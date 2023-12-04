@@ -24,6 +24,12 @@ public class Titlescreen extends World
             MyWorld gameWorld = new MyWorld();
             Greenfoot.setWorld(gameWorld);
         }
+        
+        if(Greenfoot.mouseClicked(null)) 
+        {
+            MyWorld gameWorld = new MyWorld();
+            Greenfoot.setWorld(gameWorld);
+        }
     }
     /**
      * Prepare the world for the start of the program.

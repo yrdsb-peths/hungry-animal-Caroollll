@@ -1,4 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.awt.Color;
+
 public class MyWorld extends World
 {
     public int score = 0;
@@ -30,8 +32,10 @@ public class MyWorld extends World
      */
     public void gameOver()
     {
-        Label gameOverLabel = new Label("Game Over", 100);
-        addObject(gameOverLabel, 300, 200);
+        //Label gameOverLabel = new Label("Game Over", 100);
+        //addObject(gameOverLabel, 300, 200);
+        World gameOver = new GameOver();
+        Greenfoot.setWorld(gameOver);
     }
     
     /**
