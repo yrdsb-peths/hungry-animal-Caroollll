@@ -4,7 +4,7 @@ import java.awt.Color;
 public class MyWorld extends World
 {
     public int score = 0;
-    Label scoreLabel;
+    public Label scoreLabel;
     int level = 1;
     
     /**
@@ -25,6 +25,7 @@ public class MyWorld extends World
         
         createApple();
         
+        createBomb();
     }
     
     /**
@@ -62,5 +63,18 @@ public class MyWorld extends World
         int x = Greenfoot.getRandomNumber(600);
         int y = 0;
         addObject(apple, x, y);
+    }
+    
+    /**
+     * create a new bomb at random locarion at top of the screen
+     */
+    public void createBomb()
+    {
+        Bomb bomb = new Bomb();
+        //bomb.setSpeed(level);
+        int x = Greenfoot.getRandomNumber(600);
+        int y = 0;
+        addObject(bomb, x, y);
+        
     }
 }

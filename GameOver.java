@@ -19,5 +19,10 @@ public class GameOver extends World
         super(600, 400, 1); 
         Label gameOver = new Label("Game Over", 100);
         addObject(gameOver, getWidth()/2, getHeight()/2);
+        
+        Label score = new Label("Final score: ", 80);
+        addObject(score, getWidth()/2, 300);
+        
+        //addObject(scoreLabel, 400, 300);
     }
 }

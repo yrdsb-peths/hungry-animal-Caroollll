@@ -11,7 +11,7 @@ public class Seal extends Actor
     SimpleTimer animationTimer = new SimpleTimer();
     
     /**
-     * constructor
+     * mirroring the seal 
      */
     public Seal()
     {
@@ -57,6 +57,9 @@ public class Seal extends Actor
         }
     }
     
+    /**
+     * seal moves left or right when the keys a and d are pressed
+     */
     public void act()
     {
         if(Greenfoot.isKeyDown("a"))
