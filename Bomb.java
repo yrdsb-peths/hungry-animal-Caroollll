@@ -4,8 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Bomb extends Actor
 {
     /**
-     * Act - do whatever the Bomb wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * create the bomb and upload the image and sized accordingly 
      */
     public Bomb()
     {
@@ -13,6 +12,9 @@ public class Bomb extends Actor
         bomb.scale(150,150);
     }
     
+    /** 
+     * if bomb is touching seal then the game will be over 
+     */
     public void act()
     {
         int x = getX();
