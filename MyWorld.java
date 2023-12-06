@@ -8,7 +8,7 @@ public class MyWorld extends World
     int level = 1;
     
     /**
-     * constructor for objects of class MyWorld
+     * constructor for objects of class MyWorld, creates seal, scorelabel, apple, bomb
      */
     public MyWorld()
     {    
@@ -66,7 +66,7 @@ public class MyWorld extends World
     }
     
     /**
-     * create a new bomb at random locarion at top of the screen
+     * create a new bomb at random location at top of the screen
      */
     public void createBomb()
     {

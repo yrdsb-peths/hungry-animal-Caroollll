@@ -5,10 +5,10 @@ public class Apple extends Actor
     
     public void act()
     {
-        // Add your action code here.
         int x = getX();
         int y = getY() + speed; 
         setLocation(x, y);
+        
         /**
          * remove apple and change world into game over when apple gets to the bottom
          */

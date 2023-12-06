@@ -3,6 +3,11 @@ public class Titlescreen extends World
 {
     Label titleLabel = new Label("Hungry Seal Don't Touch the Bomb!", 40);
     Label instructions = new Label("Click to begin!", 60);
+    
+    /**
+     * constructor for objects of class Titlescreen
+     * creates titlelabel, instructions, prepare 
+     **/
     public Titlescreen()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -18,6 +23,7 @@ public class Titlescreen extends World
 
     /**
      * the main world act loop
+     * when the space or screen is pressed the next world will appear
      */
     public void act()
     {
