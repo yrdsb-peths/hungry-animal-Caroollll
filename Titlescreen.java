@@ -11,6 +11,9 @@ public class Titlescreen extends World
         addObject(titleLabel, getWidth()/2, getHeight()/2);
         addObject(instructions, 300, 280);
         prepare();
+        
+        Sfx sfx = new Sfx();
+        addObject(sfx, 550, 350);
     }
 
     /**
