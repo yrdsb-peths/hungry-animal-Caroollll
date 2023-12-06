@@ -18,14 +18,14 @@ public class Seal extends Actor
         for(int i = 0; i < idleRight.length; i++)
         {
             idleRight[i] = new GreenfootImage("images/seal_idle/idle" + i + ".png");
-            idleRight[i].scale(150, 150);
+            idleRight[i].scale(80, 70);
         }
         
         for(int i = 0; i <idleLeft.length; i++)
         {
             idleLeft[i] = new GreenfootImage("images/seal_idle/idle" + i + ".png");
             idleLeft[i].mirrorHorizontally();
-            idleLeft[i].scale(150, 150);
+            idleLeft[i].scale(80, 70);
         }
         
         animationTimer.mark();
