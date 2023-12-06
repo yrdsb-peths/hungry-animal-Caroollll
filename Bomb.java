@@ -16,19 +16,13 @@ public class Bomb extends Actor
     public void act()
     {
         int x = getX();
-        int y = getY() + 1; 
+        int y = getY() + 2; 
         setLocation(x, y);
         
-        /** if(getY() >= world.getHeight())
-        {
-            Bomb bomb = new Bomb();
-            addObject(bomb, x, y);
-        }  **/
-        
-        
+        MyWorld world = (MyWorld) getWorld();
         if(isTouching(Seal.class))
         {
-            MyWorld world = (MyWorld) getWorld();
+            //MyWorld world = (MyWorld) getWorld();
             world.gameOver();
         }
     }

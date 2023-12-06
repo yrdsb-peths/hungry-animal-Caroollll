@@ -64,13 +64,13 @@ public class Seal extends Actor
     {
         if(Greenfoot.isKeyDown("a"))
         {
-            move(-3);
+            move(-4);
             animateSeal();
             facing = "left";
         }
         if(Greenfoot.isKeyDown("d"))
         {
-            move(3);
+            move(4);
             animateSeal();
             facing = "right";
         }
@@ -91,6 +91,7 @@ public class Seal extends Actor
             removeTouching(Apple.class);
             MyWorld world = (MyWorld) getWorld();
             world.createApple();
+            world.createBomb();
             world.increaseScore();
             sealSound.play();
         }

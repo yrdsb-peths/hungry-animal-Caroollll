@@ -1,15 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Titlescreen extends World
 {
-    Label titleLabel = new Label("Hungry Seal", 70);
-    Label instructions = new Label("Press space to begin!", 60);
+    Label titleLabel = new Label("Hungry Seal Don't Touch the Bomb!", 40);
+    Label instructions = new Label("Click to begin!", 60);
     public Titlescreen()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
 
         addObject(titleLabel, getWidth()/2, getHeight()/2);
-        addObject(instructions, 300, 290);
+        addObject(instructions, 300, 280);
         prepare();
     }
 
@@ -38,7 +38,7 @@ public class Titlescreen extends World
     private void prepare()
     {
         Label label = new Label("Use keys A and D to move!", 40);
-        addObject(label,300,250);
+        addObject(label,300,240);
         Seal seal = new Seal();
         addObject(seal,491,82);
     }

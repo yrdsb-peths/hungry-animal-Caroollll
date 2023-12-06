@@ -20,9 +20,18 @@ public class GameOver extends World
         Label gameOver = new Label("Game Over", 100);
         addObject(gameOver, getWidth()/2, getHeight()/2);
         
-        Label score = new Label("Final score: ", 80);
-        addObject(score, getWidth()/2, 300);
+        Label restart = new Label("Click to restart", 60);
+        addObject(restart, getWidth()/2, 250);
         
-        //addObject(scoreLabel, 400, 300);
+        /**Label score = new Label("Final score: ", 80);
+        addObject(score, getWidth()/2, 300);
+        addObject(scoreLabel, 400, 300); **/
+        
+    }
+    
+    public void act() {
+        if(Greenfoot.mouseClicked(null)){
+            Greenfoot.setWorld(new Titlescreen());
+        }
     }
 }
